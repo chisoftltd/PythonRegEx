@@ -10,6 +10,7 @@ else:
     print("No match")
 print()
 
+# Metacharacters
 # A set of characters
 b = re.findall("[a-i]", txt)
 print(b)
@@ -76,6 +77,84 @@ print()
 
 # Either or
 x = re.findall("while|terminate ", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+print()
+
+# Special Sequences
+# Returns a match if the specified characters are at the beginning of the string
+x = re.findall("\AYes", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is a match!")
+else:
+  print("No match")
+print()
+
+# Returns a match where the specified characters are at the beginning or at the end of a word
+# (the "r" in the beginning is making sure that the string is being treated as a "raw string")
+x = re.findall(r"\bstring", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+print()
+
+x = re.findall(r"ing\b", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+print()
+
+# Returns a match where the specified characters are present, but NOT at the beginning (or at the end) of a word
+# (the "r" in the beginning is making sure that the string is being treated as a "raw string")
+x = re.findall(r"\Bin", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+print()
+
+x = re.findall(r"rin\B", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+print()
+
+# 	Returns a match where the string contains digits (numbers from 0-9)
+x = re.findall("\d", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+print()
+
+# Returns a match where the string DOES NOT contain digits
+x = re.findall("\D", txt)
 
 print(x)
 
