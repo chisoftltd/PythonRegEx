@@ -1,5 +1,9 @@
 # Python RegEx
 import re
+import os
+import datetime
+
+os.system('cls')
 
 # txt = "When Ctrl-C is pressed on the keyboard, the while loop will terminate"
 txt = "Yes, the string starts with hello. When Ctrl-C is pressed on the keyboard, the while loop will terminate cv.WaitKey(7) % 0x100!"
@@ -194,5 +198,139 @@ if k:
 else:
   print("No match")
 print()
+os.system("cls")
+print(datetime.datetime.now())
 
 # Sets
+# Returns a match where one of the specified characters (a, r, or n) are present
+e = re.findall("[ing]", txt)
+print(e)
+
+if e:
+  print("yes, there is at least one match!")
+else:
+  print("No match")
+print()
+print(datetime.datetime.now())
+
+# Returns a match for any lower case character, alphabetically between a and n
+e = re.findall("[a-d]", txt)
+print(e)
+
+if e:
+  print("yes, there is at least one match!")
+else:
+  print("No match")
+print()
+print(datetime.datetime.now())
+
+# Returns a match for any character EXCEPT a, r, and n
+e = re.findall("[^a-z]", txt)
+print(e)
+
+if e:
+  print("yes, there is at least one match!")
+else:
+  print("No match")
+print()
+print(datetime.datetime.now())
+
+# Returns a match where any of the specified digits (0, 1, 2, or 3) are present
+e = re.findall("[120]", txt)
+print(e)
+
+if e:
+  print("yes, there is at least one match!")
+else:
+  print("No match")
+print()
+print(datetime.datetime.now())
+
+# Returns a match for any digit between 0 and 9
+e = re.findall("[0-9]", txt)
+print(e)
+
+if e:
+  print("yes, there is at least one match!")
+else:
+  print("No match")
+print()
+print(datetime.datetime.now())
+
+# Returns a match for any two-digit numbers from 00 and 59
+e = re.findall("[0-2][0-9][0-9]", txt)
+print(e)
+
+if e:
+  print("yes, there is at least one match!")
+else:
+  print("No match")
+print()
+print(datetime.datetime.now())
+
+# Returns a match for any character alphabetically between a and z, lower case OR upper case
+e = re.findall("[a-zA-Z]", txt)
+print(e)
+
+if e:
+  print("yes, there is at least one match!")
+else:
+  print("No match")
+print()
+print(datetime.datetime.now())
+
+# In sets, +, *, ., |, (), $,{} has no special meaning, so [+] means: return a match for any + character in the string
+e = re.findall("[()]", txt)
+print(e)
+
+if e:
+  print("yes, there is at least one match!")
+else:
+  print("No match")
+print(datetime.datetime.now())
+print()
+
+# The findall() Function
+t = re.findall("in", txt)
+print(t)
+print(datetime.datetime.now())
+print()
+
+# The search() Function
+a1 = re.search("\s", txt)
+print("The first white-space character is located in position:", a1.start())
+print(datetime.datetime.now())
+print()
+
+# The split() Function
+a2 = re.split("\s", txt)
+print(a2)
+print(datetime.datetime.now())
+print()
+
+# Split the string only at the first occurrence
+a2 = re.split("\s", txt, 3)
+print(a2)
+print(datetime.datetime.now())
+print()
+
+# The sub() Function
+a3 = re.sub("\s", "_", txt)
+print(a3)
+print(datetime.datetime.now())
+print()
+
+# You can control the number of replacements by specifying the count parameter
+x = re.sub("\s", "_", txt, 4)
+print(x)
+print(datetime.datetime.now())
+print()
+
+# Match Object
+x = re.search("es", txt)
+print(x) #this will print an object
+print(x.span())
+print(x.string)
+print(x.group())
+print(datetime.datetime.now())
+print()
