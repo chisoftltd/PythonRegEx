@@ -2,7 +2,7 @@
 import re
 
 # txt = "When Ctrl-C is pressed on the keyboard, the while loop will terminate"
-txt = "Yes, the string starts with hello. When Ctrl-C is pressed on the keyboard, the while loop will terminate cv.WaitKey(7) % 0x100"
+txt = "Yes, the string starts with hello. When Ctrl-C is pressed on the keyboard, the while loop will terminate cv.WaitKey(7) % 0x100!"
 a = re.search("^When.*terminate$", txt)
 if a:
     print("YES! We have a match!")
@@ -162,3 +162,37 @@ if x:
   print("Yes, there is at least one match!")
 else:
   print("No match")
+print()
+
+# Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9, and the underscore _ character)
+x = re.findall("\w", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+print()
+
+# Returns a match where the string DOES NOT contain any word characters (characters NOT between a and Z. Like "!", "?" white-space etc.)
+x = re.findall("\W", txt)
+print(x)
+if x:
+  print("Yes, there is at least one match")
+else:
+  print("No match")
+print()
+
+# Returns a match if the specified characters are at the end of the string
+
+k = re.findall("0x100!\Z", txt)
+print(k)
+
+if k:
+  print("Yes, there is a match!")
+else:
+  print("No match")
+print()
+
+# Sets
